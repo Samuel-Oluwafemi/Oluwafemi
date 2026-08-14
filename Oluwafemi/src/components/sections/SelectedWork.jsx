@@ -77,7 +77,7 @@ export default function SelectedWork() {
             tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl"
             >
               Things I've built, shipped and{" "}
-              <span className="text-cyan-300">explored.</span>
+              explored.
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
@@ -135,7 +135,7 @@ export default function SelectedWork() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 text-md underline leading-7 text-cyan-300"
+                  className="mt-6 text-md underline leading-7 text-white"
                 >
                   View Website
                 </a>
