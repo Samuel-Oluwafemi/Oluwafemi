@@ -3,11 +3,11 @@ import heroImg from "../../assets/hero.png";
 export default function Hero() {
   return (
     <section
-      className="container mx-auto px-5 sm:px-8 lg:px-10 pt-27 pb-24 sm:pt-24 lg:pt-35 lg:pb-15"
+      className="container mx-auto px-5 sm:px-8 lg:px-10 pt-27 pb-2 sm:pt-24 lg:pt-35 lg:pb-15"
       id="home"
     >
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(640px,1fr)_minmax(420px,510px)]">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl order-last lg:order-first">
           <div
             className="inline-flex items-center gap-2 text-[11px] font-extrabold 
           uppercase tracking-[0.24em] text-cyan-300"
@@ -16,22 +16,20 @@ export default function Hero() {
           </div>
 
           <h1
-            className="mt-7 max-w-4xl font-['Space_Grotesk'] text-5xl font-medium 
+            className="mt-7 max-w-4xl font-['Space_Grotesk'] text-3xl font-medium 
           leading-[0.93] tracking-[-0.075em] text-slate-100 sm:text-6xl lg:text-6xl"
           >
-            I build conversion focused websites and products for businesses to generate revenue.
+            I build conversion focused websites and products for businesses to <span className="text-cyan-300">generate revenue.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            I'm <span className="text-cyan-300">Samuel Oluwafemi,</span> a web
+          <p className="mt-8 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+            I'm Samuel Oluwafemi, a web
             developer focused on{" "}
-            <span className="text-cyan-300">
               modern interfaces, conversion-focused websites and practical
               digital products.
-            </span>
           </p>
 
-          <div className="mt-9 flex md:flex-wrap items-center gap-6">
+          <div className="mt-9 flex md:flex-wrap items-center gap-3 md:gap-6">
             <a
               href="#work"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-3 
@@ -58,7 +56,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside className="min-w-0" aria-label="Studio preview">
+        <aside className="min-w-0 order-first lg:order-last" aria-label="Studio preview">
           <div
             className="relative min-h-[200px] md:min-h-[500px] overflow-hidden rounded-[30px] border border-slate-700 
           bg-gradient-to-b from-slate-800 to-slate-950 shadow-2xl shadow-slate-950/60"
@@ -72,14 +70,16 @@ export default function Hero() {
                 oluwafemi.studio
               </span>
             </div>
+            {/*  */}
             <div className="p-4">
               <div className="overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900">
                 <img
-                  className="h-[348px] md:h-[378px] w-full object-cover opacity-95"
+                  className="h-[310px] md:h-[378px] w-full object-cover opacity-95"
                   src={heroImg}
                   alt=""
                 />
               </div>
+              {/*  */}
               <div className="flex items-center justify-between pt-5">
                 <div>
                   <span className="block text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">
