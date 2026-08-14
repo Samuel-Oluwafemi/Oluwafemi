@@ -28,18 +28,18 @@ export default function Hero() {
             conversion-focused websites and practical digital products.
           </p>
 
-          <div className="mt-9 flex md:flex-wrap items-center gap-3 md:gap-6">
+          <div className="mt-9 flex md:flex-wrap items-center gap-2 md:gap-6">
             <a
               href="#work"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-3 
-              py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
+              py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
             >
               View my work
             </a>
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-full border border-slate-700 
-              px-7 py-3 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-100 transition 
+              px-7 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-100 transition 
               hover:border-cyan-300 hover:bg-slate-900"
             >
               Let’s work together

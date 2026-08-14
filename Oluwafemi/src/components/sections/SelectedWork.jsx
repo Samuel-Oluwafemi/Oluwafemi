@@ -62,7 +62,7 @@ const projects = [
 
 export default function SelectedWork() {
   return (
-    <section className="py-20 sm:py-24 lg:py-28" id="work">
+    <section className="py-5 sm:py-24 lg:py-28" id="work">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-9 flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
@@ -92,7 +92,7 @@ export default function SelectedWork() {
               className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900/70"
               key={project.title}
             >
-              <div className="min-h-[220px] bg-slate-900">
+              <div className="min-h-[200px] md:min-h-[220px] bg-slate-900">
                 <div
                   className="relative flex min-h-[200px] md:min-h-[220px] items-center justify-center 
                 bg-gradient-to-br from-cyan-500/10 to-slate-900"
@@ -124,7 +124,7 @@ export default function SelectedWork() {
                     {project.category}
                   </span>
                 </div>
-                <h3 className="mt-7 font-['Space_Grotesk'] text-3xl font-medium tracking-[-0.03em] text-slate-100">
+                <h3 className="mt-7 font-['Space_Grotesk'] text-2xl md:text-3xl font-medium tracking-[-0.03em] text-slate-100">
                   {project.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-400">
