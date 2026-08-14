@@ -19,14 +19,13 @@ export default function Hero() {
             className="mt-7 max-w-4xl font-['Space_Grotesk'] text-3xl font-medium 
           leading-[0.93] tracking-[-0.075em] text-slate-100 sm:text-6xl lg:text-6xl"
           >
-            I build conversion focused websites and products for businesses to <span className="text-cyan-300">generate revenue.</span>
+            I build conversion focused websites and products for businesses to{" "}
+            <span className="text-cyan-300">generate revenue.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-            I'm Samuel Oluwafemi, a web
-            developer focused on{" "}
-              modern interfaces, conversion-focused websites and practical
-              digital products.
+            I'm Samuel Oluwafemi, a web developer focused on modern interfaces,
+            conversion-focused websites and practical digital products.
           </p>
 
           <div className="mt-9 flex md:flex-wrap items-center gap-3 md:gap-6">
@@ -56,7 +55,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside className="min-w-0 order-first lg:order-last" aria-label="Studio preview">
+        <aside
+          className="min-w-0 order-first lg:order-last"
+          aria-label="Studio preview"
+        >
           <div
             className="relative min-h-[200px] md:min-h-[500px] overflow-hidden rounded-[30px] border border-slate-700 
           bg-gradient-to-b from-slate-800 to-slate-950 shadow-2xl shadow-slate-950/60"

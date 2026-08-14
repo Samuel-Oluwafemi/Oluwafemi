@@ -8,10 +8,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-3">
-      
-      {/* =========================
-          MAIN PILL NAVBAR
-      ========================== */}
+      {/* NAVBAR*/}
       <nav
         className="mx-auto max-w-5xl rounded-full border border-slate-800 
         bg-slate-950/80 px-4 py-3 backdrop-blur-xl 
@@ -19,7 +16,6 @@ export default function Navbar() {
         aria-label="Primary navigation"
       >
         <div className="flex w-full items-center justify-between">
-
           {/* Logo */}
           <a
             href="#home"
@@ -30,9 +26,8 @@ export default function Navbar() {
             Oluwafemi<span className="text-cyan-400">✦</span>
           </a>
 
-          {/* =========================
-              DESKTOP NAVIGATION
-          ========================== */}
+          {/*
+              DESKTOP NAVIGATION*/}
           <ul className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <li key={item}>
@@ -90,7 +85,6 @@ export default function Navbar() {
           backdrop-blur-xl shadow-2xl shadow-slate-950/60 
           md:hidden"
         >
-
           {/* Mobile Links */}
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
