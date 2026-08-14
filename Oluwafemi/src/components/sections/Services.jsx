@@ -31,12 +31,16 @@ export default function Services() {
     <section className="py-20 sm:py-24 lg:py-28" id="services">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-10 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase 
-          tracking-[0.24em] text-cyan-300">
+          <div
+            className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase 
+          tracking-[0.24em] text-cyan-300"
+          >
             <span>WHAT I BUILD</span>
           </div>
-          <h2 className="mt-4 max-w-4xl font-['Space_Grotesk'] text-4xl font-medium leading-tight 
-          tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl">
+          <h2
+            className="mt-4 max-w-4xl font-['Space_Grotesk'] text-4xl font-medium leading-tight 
+          tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl"
+          >
             Websites should do more than look good.
           </h2>
           <p className="mt-6 max-w-4xl text-sm leading-8 text-slate-400 sm:text-base">
@@ -54,8 +58,10 @@ export default function Services() {
               <span className="font-['JetBrains_Mono'] text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-300">
                 0{index + 1}
               </span>
-              <h3 className="mt-8 font-['Space_Grotesk'] text-3xl font-medium leading-tight tracking-[-0.035em] 
-              text-slate-100">
+              <h3
+                className="mt-8 font-['Space_Grotesk'] text-3xl font-medium leading-tight tracking-[-0.035em] 
+              text-slate-100"
+              >
                 {service.title}
               </h3>
               <p className="mt-5 text-sm leading-8 text-slate-400">

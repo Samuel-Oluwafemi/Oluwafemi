@@ -19,7 +19,7 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            aria-label="OluwafemiX home"
+            aria-label="Oluwafemi home"
             onClick={() => setIsOpen(false)}
             className="text-2xl font-bold tracking-[-.04em] text-slate-100"
           >

@@ -1,4 +1,3 @@
-
 const steps = [
   {
     number: "01",
