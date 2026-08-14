@@ -86,13 +86,13 @@ export default function SelectedWork() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
             <article
               className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900/70"
               key={project.title}
             >
-              <div className="min-h-[200px] md:min-h-[220px] bg-slate-900">
+              <div className="min-h-[200px] md:min-h-[200px] bg-slate-900">
                 <div
                   className="relative flex min-h-[200px] md:min-h-[220px] items-center justify-center 
                 bg-gradient-to-br from-cyan-500/10 to-slate-900"
@@ -109,7 +109,7 @@ export default function SelectedWork() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
                       src={project.image}
-                      className="object-cover h-[200px] md:h-[220px]"
+                      className="object-cover h-[200px] md:w-[1000px] md:h-[220px]"
                       alt=""
                     />
                   </div>
