@@ -7,7 +7,7 @@ export default function Footer() {
             className="text-2xl font-bold tracking-[-.04em] text-slate-100"
             href="#home"
           >
-            Oluwafemi<span className="text-cyan-400">✦</span>
+            Oluwafemi
           </a>
           <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
             Built with React, Tailwind and unreasonable curiosity.
@@ -48,7 +48,10 @@ export default function Footer() {
           </li>
         </ul>
         <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
-          © 2026 Samuel Oluwafemi
+          © 2026 Samuel Oluwafemi 
+        </div>
+        <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+          All rights reserved
         </div>
       </div>
     </footer>
