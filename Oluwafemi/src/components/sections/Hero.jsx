@@ -1,4 +1,14 @@
+import { motion } from "framer-motion";
 import heroImg from "../../assets/hero.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 26 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 export default function Hero() {
   return (
@@ -7,11 +17,13 @@ export default function Hero() {
       id="home"
     >
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(640px,1fr)_minmax(420px,510px)]">
-        <div className="max-w-4xl order-last lg:order-first">
-          <div
-            className="inline-flex items-center gap-2 text-[11px] font-extrabold 
-          uppercase tracking-[0.24em] text-cyan-300"
-          >
+        <motion.div
+          className="max-w-4xl order-last lg:order-first"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+        >
+          <div className="section-label">
             <span>WEBSITE DEVELOPER • UI/UX • DIGITAL PRODUCTS</span>
           </div>
 
@@ -20,7 +32,7 @@ export default function Hero() {
           leading-[0.93] tracking-[-0.075em] text-slate-100 sm:text-6xl lg:text-6xl"
           >
             I build conversion focused websites and products for businesses to{" "}
-            <span className="text-cyan-300">generate revenue.</span>
+            <span className="hero-highlight">generate revenue.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
@@ -31,16 +43,13 @@ export default function Hero() {
           <div className="mt-9 flex md:flex-wrap items-center gap-2 md:gap-6">
             <a
               href="#work"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-3 
-              py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
+              className="premium-button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-3 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950"
             >
               View my work
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-slate-700 
-              px-7 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-100 transition 
-              hover:border-cyan-300 hover:bg-slate-900"
+              className="secondary-button inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-7 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-100 hover:border-cyan-300 hover:bg-slate-900/80"
             >
               Let’s work together
             </a>
@@ -50,18 +59,21 @@ export default function Hero() {
             className="mt-10 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.26em] 
           text-slate-400"
           >
-            <span className="h-2 w-2 rounded-full bg-cyan-400" /> OPEN TO CLIENT
-            WORK • COLLABORATIONS • NEW BUILDS
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.9)]" />{" "}
+            OPEN TO CLIENT WORK • COLLABORATIONS • NEW BUILDS
           </div>
-        </div>
+        </motion.div>
 
-        <aside
-          className="min-w-0 order-first lg:order-last"
+        <motion.aside
+          className="floating-orb min-w-0 order-first lg:order-last"
           aria-label="Studio preview"
+          initial={{ opacity: 0, y: 40, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
         >
           <div
-            className="relative min-h-[200px] md:min-h-[500px] overflow-hidden rounded-[30px] border border-slate-700 
-          bg-gradient-to-b from-slate-800 to-slate-950 shadow-2xl shadow-slate-950/60"
+            className="relative min-h-[200px] md:min-h-[500px] overflow-hidden rounded-[30px] border border-slate-700/80 
+          bg-gradient-to-b from-slate-800/90 to-slate-950 shadow-[0_30px_100px_rgba(15,23,42,0.8)]"
           >
             <div className="absolute inset-[-80px] rounded-full bg-cyan-900/15 blur-2xl" />
             <div className="relative flex items-center gap-2 border-b border-white/10 px-5 py-4">
@@ -114,7 +126,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </aside>
+        </motion.aside>
       </div>
     </section>
   );

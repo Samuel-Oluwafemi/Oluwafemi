@@ -1,13 +1,17 @@
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
     <section className="py-20 sm:py-24 lg:py-28" id="about">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(260px,0.9fr)_minmax(520px,1fr)]">
-          <div>
-            <div
-              className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase 
-            tracking-[0.24em] text-cyan-300"
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="section-label">
               <span>A LITTLE ABOUT ME</span>
             </div>
             <h2
@@ -16,8 +20,14 @@ export default function About() {
             >
               I care about what happens after the page loads.
             </h2>
-          </div>
-          <div className="text-slate-300">
+          </motion.div>
+          <motion.div
+            className="premium-card rounded-[28px] p-7 sm:p-8 text-slate-300"
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="text-sm leading-8 text-slate-300 sm:text-base">
               I started by learning the web from the ground up — HTML, CSS and
               JavaScript — before moving into React and modern frontend
@@ -36,7 +46,7 @@ export default function About() {
               the experience clear, building it and getting it into people's
               hands with the goal of solving problems for businesses.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

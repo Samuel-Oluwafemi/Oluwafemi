@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const services = [
   {
     title: "Websites built around the customer journey.",
@@ -30,11 +32,14 @@ export default function Services() {
   return (
     <section className="py-20 sm:py-24 lg:py-28" id="services">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="mb-10 flex flex-col items-center text-center">
-          <div
-            className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase 
-          tracking-[0.24em] text-cyan-300"
-          >
+        <motion.div
+          className="mb-10 flex flex-col items-center text-center"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="section-label">
             <span>WHAT I BUILD</span>
           </div>
           <h2
@@ -47,13 +52,17 @@ export default function Services() {
             I build digital experiences around what the business actually needs
             its customers to do.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {services.map((service, index) => (
-            <article
-              className="rounded-3xl border border-slate-800 bg-slate-900/50 p-8"
+            <motion.article
+              className="premium-card group rounded-[28px] p-8"
               key={service.title}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="font-['JetBrains_Mono'] text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-300">
                 0{index + 1}
@@ -67,7 +76,7 @@ export default function Services() {
               <p className="mt-5 text-sm leading-8 text-slate-400">
                 {service.summary}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import heroImg from "../../assets/Velora.png";
 import heroImg1 from "../../assets/Salonflow.png";
 import heroImg2 from "../../assets/Elless.png";
@@ -30,7 +31,14 @@ const projects = [
     link: "https://velora0.netlify.app/",
     summary:
       "A conversion-focused e-commerce website for a minimalist fashion brand to showcase products, build trust and generate sales.",
-    tech: ["REACT", "TYPESCRIPT", "FIGMA", "FIREBASE", "EMAILJS", "PAYSTACK PAYMENT INTEGRATION"],
+    tech: [
+      "REACT",
+      "TYPESCRIPT",
+      "FIGMA",
+      "FIREBASE",
+      "EMAILJS",
+      "PAYSTACK PAYMENT INTEGRATION",
+    ],
   },
   {
     label: "CLIENT PROJECT",
@@ -78,12 +86,15 @@ export default function SelectedWork() {
   return (
     <section className="py-5 sm:py-24 lg:py-28" id="work">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="mb-9 flex flex-col justify-between gap-10 md:flex-row md:items-end">
+        <motion.div
+          className="mb-9 flex flex-col justify-between gap-10 md:flex-row md:items-end"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div>
-            <div
-              className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase 
-            tracking-[0.24em] text-cyan-300"
-            >
+            <div className="section-label">
               <span>SELECTED WORK</span>
             </div>
             <h2
@@ -97,18 +108,26 @@ export default function SelectedWork() {
             A collection of client work, personal products and concepts where
             design, code and business goals meet.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <article
-              className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900/70"
+            <motion.article
+              className="premium-card overflow-hidden rounded-[24px]"
               key={project.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.65,
+                delay: index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <div className="min-h-[200px] md:min-h-[200px] bg-slate-900">
                 <div
                   className="relative flex min-h-[200px] md:min-h-[220px] items-center justify-center 
-                bg-gradient-to-br from-cyan-500/10 to-slate-900"
+                bg-gradient-to-br from-cyan-500/10 via-slate-900 to-violet-500/10"
                 >
                   {/* Project Number */}
                   <span
@@ -119,10 +138,10 @@ export default function SelectedWork() {
                   </span>
 
                   {/* Project Image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                     <img
                       src={project.image}
-                      className="object-cover h-[200px] md:w-[1000px] md:h-[220px]"
+                      className="project-image h-[200px] w-full object-cover md:h-[220px] md:w-[1000px]"
                       alt=""
                     />
                   </div>
@@ -144,14 +163,14 @@ export default function SelectedWork() {
                   {project.summary}
                 </p>
                 <div className="mt-4 flex items-center justify-between gap-6 md:gap-4">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-md bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-semibold py-2 px-4 rounded-full transition"
-                >
-                  View Project
-                </a>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="premium-button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-4 py-2 text-sm font-semibold text-slate-950"
+                  >
+                    View Project
+                  </a>
                 </div>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {project.tech.map((item) => (
@@ -165,7 +184,7 @@ export default function SelectedWork() {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
