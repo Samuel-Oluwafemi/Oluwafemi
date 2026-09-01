@@ -21,7 +21,7 @@ export default function Navbar() {
             href="#home"
             aria-label="Oluwafemi home"
             onClick={() => setIsOpen(false)}
-            className="text-[18px] md:text-[23px] font-bold tracking-[-.04em] text-slate-100"
+            className="text-[20px] md:text-[23px] font-bold tracking-[-.04em] text-slate-100"
           >
             Oluwafemi
           </a>
