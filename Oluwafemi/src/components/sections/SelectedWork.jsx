@@ -2,6 +2,7 @@ import heroImg from "../../assets/Velora.png";
 import heroImg1 from "../../assets/Salonflow.png";
 import heroImg2 from "../../assets/Elless.png";
 import heroImg3 from "../../assets/Berry.png";
+import heroImg4 from "../../assets/Liz.png";
 
 const Images = [
   {
@@ -16,6 +17,9 @@ const Images = [
   {
     src: heroImg3,
   },
+  {
+    src: heroImg4,
+  },
 ];
 const projects = [
   {
@@ -25,11 +29,21 @@ const projects = [
     image: Images[0].src,
     link: "https://velora0.netlify.app/",
     summary:
-      "A conversion-focused e-commerce website for a minimalist fashion brand for a premium consumer brand.",
-    tech: ["REACT", "TYPESCRIPT", "FIGMA", "FIREBASE", "EMAILJS"],
+      "A conversion-focused e-commerce website for a minimalist fashion brand to showcase products, build trust and generate sales.",
+    tech: ["REACT", "TYPESCRIPT", "FIGMA", "FIREBASE", "EMAILJS", "PAYSTACK PAYMENT INTEGRATION"],
   },
   {
     label: "CLIENT PROJECT",
+    title: "VirtualByLiz",
+    category: "Administrative Virtual Assistant",
+    image: Images[4].src,
+    link: "https://virtualbyliz.netlify.app/",
+    summary:
+      "A professional portfolio website for an administrative virtual assistant to showcase services, build trust and generate enquiries.",
+    tech: ["REACT", "TYPESCRIPT", "TAILWINDCSS", "EMAILJS"],
+  },
+  {
+    label: "PERSONAL PROJECT",
     title: "SalonFlow",
     category: "Booking Experience",
     image: Images[1].src,
@@ -76,8 +90,7 @@ export default function SelectedWork() {
               className="mt-4 max-w-4xl font-['Space_Grotesk'] text-4xl font-medium leading-tight 
             tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl"
             >
-              Things I've built, shipped and{" "}
-              explored.
+              Things I've built, shipped and explored.
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
