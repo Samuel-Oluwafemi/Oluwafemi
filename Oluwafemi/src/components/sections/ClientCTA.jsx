@@ -1,8 +1,16 @@
+import { motion } from "framer-motion";
+
 export default function ClientCTA() {
   return (
     <section className="py-20 sm:py-24" id="cta">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="rounded-[34px] border border-cyan-400/50 bg-gradient-to-r from-cyan-400/10 to-slate-900 p-12 md:p-16">
+        <motion.div
+          className="rounded-[34px] border border-cyan-400/50 bg-gradient-to-r from-cyan-400/10 to-slate-900 p-12 md:p-16"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-cyan-300">
             <span>HAVE SOMETHING IN MIND?</span>
           </div>
@@ -15,7 +23,7 @@ export default function ClientCTA() {
           <a href="#contact" className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300">
             Start a conversation
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
