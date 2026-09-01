@@ -129,7 +129,7 @@ export default function SelectedWork() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center justify-between gap-6 md:gap-4">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">
                     {project.label}
                   </span>
@@ -143,15 +143,16 @@ export default function SelectedWork() {
                 <p className="mt-4 text-sm leading-7 text-slate-400">
                   {project.summary}
                 </p>
-
+                <div className="mt-4 flex items-center justify-between gap-6 md:gap-4">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 text-md underline leading-7 text-white"
+                  className="text-md bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-semibold py-2 px-4 rounded-full transition"
                 >
-                  View Website
+                  View Project
                 </a>
+                </div>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {project.tech.map((item) => (
                     <span
