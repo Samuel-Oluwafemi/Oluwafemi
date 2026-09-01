@@ -87,7 +87,7 @@ export default function Hero() {
                   <span className="block text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">
                     BUILD 001
                   </span>
-                  <span className="mt-2 block font-['Space_Grotesk'] text-base text-slate-100">
+                  <span className="mt-2 block text-[8px] md:text-[10px] text-base text-slate-100">
                     Digital Systems
                   </span>
                 </div>
