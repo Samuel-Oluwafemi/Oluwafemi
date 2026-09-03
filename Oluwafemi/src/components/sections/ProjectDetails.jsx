@@ -148,16 +148,16 @@ export default function ProjectDetails({ project, onBack }) {
             {/* FEATURES */}
             <div className="mt-12 border-t border-slate-800 pt-8">
               <span className="section-label">FEATURES</span>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <ol className="mt-6 grid list-decimal gap-3 pl-5 marker:font-['JetBrains_Mono'] marker:text-xs marker:font-bold marker:text-cyan-300 sm:grid-cols-2 lg:grid-cols-3">
                 {project.features.map((feature) => (
                   <li
-                    className="border-b border-slate-800 pb-3 text-sm font-medium text-slate-300"
+                    className="border-b border-slate-800 pb-3 pl-2 text-sm font-medium text-slate-300"
                     key={feature}
                   >
                     {feature}
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
 
             {/* TECHNOLOGY */}
