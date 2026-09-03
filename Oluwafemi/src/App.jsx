@@ -13,6 +13,7 @@ import Contact from "./components/sections/Contact.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import { projects } from "./data/projects.js";
 
+// Animation variants for fade-up effect
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: {
@@ -31,6 +32,7 @@ export default function App() {
     window.location.hash.replace("#project/", ""),
   );
 
+  // Effect to handle URL hash changes and update the selected project slug
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
@@ -39,14 +41,17 @@ export default function App() {
       );
     };
 
+    // Add event listener for hash changes and clean up on unmount
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
+  // Find the selected project based on the current slug
   const selectedProject = projects.find(
     (project) => project.slug === projectSlug,
   );
 
+  // Function to show the homepage by clearing the URL hash and scrolling to the top
   const showHomepage = () => {
     window.location.hash = "";
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,8 +62,14 @@ export default function App() {
       className={`app-shell ${theme} min-h-screen antialiased selection:bg-cyan-400/40`}
     >
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="floating-orb absolute left-1/2 top-[-8rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="floating-orb absolute bottom-[-12rem] right-[-4rem] h-[26rem] w-[26rem] rounded-full bg-violet-500/10 blur-3xl" />
+        <div
+          className="floating-orb absolute left-1/2 top-[-8rem] h-[30rem] w-[30rem] -translate-x-1/2 
+        rounded-full bg-cyan-500/10 blur-3xl"
+        />
+        <div
+          className="floating-orb absolute bottom-[-12rem] right-[-4rem] h-[26rem] w-[26rem] 
+        rounded-full bg-violet-500/10 blur-3xl"
+        />
       </div>
 
       <Navbar theme={theme} setTheme={setTheme} />

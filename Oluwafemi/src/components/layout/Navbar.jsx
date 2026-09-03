@@ -3,9 +3,11 @@ import { Menu, MoonStar, SunMedium, X } from "lucide-react";
 
 const navItems = ["Work", "Services", "About", "Contact"];
 
+// Navbar component with theme toggle and responsive navigation
 export default function Navbar({ theme, setTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Function to toggle between light and dark themes
   const toggleTheme = () => {
     setTheme((current) => (current === "dark" ? "light" : "dark"));
   };
@@ -17,6 +19,7 @@ export default function Navbar({ theme, setTheme }) {
         px-3 py-2.5 shadow-[0_18px_60px_rgba(2,6,23,0.55)] sm:px-4 sm:py-3"
         aria-label="Primary navigation"
       >
+        {/* NAVIGATION LINKS */}
         <div className="flex w-full items-center gap-2 sm:gap-3">
           <a
             href="#home"
@@ -27,13 +30,15 @@ export default function Navbar({ theme, setTheme }) {
             Oluwafemi
           </a>
 
+          {/* NAVIGATION MENU */}
           <div className="hidden flex-1 items-center justify-center md:flex">
             <ul className="flex items-center gap-6 lg:gap-8">
               {navItems.map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition hover:text-cyan-300 md:text-[11px]"
+                    className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition 
+                    hover:text-cyan-300 md:text-[11px]"
                   >
                     {item}
                   </a>
@@ -42,27 +47,41 @@ export default function Navbar({ theme, setTheme }) {
             </ul>
           </div>
 
+          {/* THEME TOGGLE AND CONTACT BUTTON */}
           <div className="ml-auto flex items-center gap-2 sm:gap-3">
             <button
               type="button"
               onClick={toggleTheme}
-              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 text-slate-100 transition hover:border-cyan-300 hover:text-cyan-300 sm:h-10 sm:w-10"
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 
+              bg-slate-900/70 text-slate-100 transition hover:border-cyan-300 hover:text-cyan-300 sm:h-10 sm:w-10"
             >
-              {theme === "dark" ? <SunMedium size={16} /> : <MoonStar size={16} />}
+              {theme === "dark" ? (
+                <SunMedium size={16} />
+              ) : (
+                <MoonStar size={16} />
+              )}
             </button>
 
+            {/* CONTACT BUTTON */}
             <a
               href="#contact"
-              className="hidden items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300 md:inline-flex md:px-6 md:py-3 md:text-[11px]"
+              className="hidden items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] 
+              font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300 md:inline-flex md:px-6 md:py-3 md:text-[11px]"
             >
               Let's build
             </a>
 
+            {/* MOBILE MENU BUTTON */}
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-100 transition hover:border-cyan-300 hover:text-cyan-300 md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-100 
+              transition hover:border-cyan-300 hover:text-cyan-300 md:hidden"
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
             >
@@ -74,7 +93,8 @@ export default function Navbar({ theme, setTheme }) {
 
       {isOpen && (
         <div
-          className="mx-auto mt-3 max-w-5xl rounded-3xl border border-slate-800 bg-slate-950/95 p-4 backdrop-blur-xl shadow-2xl shadow-slate-950/60 md:hidden"
+          className="mx-auto mt-3 max-w-5xl rounded-3xl border border-slate-800 bg-slate-950/95 p-4 backdrop-blur-xl
+           shadow-2xl shadow-slate-950/60 md:hidden"
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
@@ -82,7 +102,8 @@ export default function Navbar({ theme, setTheme }) {
                 <a
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+                  className="block rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] 
+                  text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
                 >
                   {item}
                 </a>
@@ -90,14 +111,15 @@ export default function Navbar({ theme, setTheme }) {
             ))}
           </ul>
 
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
-            >
-              Let's build
-            </a>
-          </div>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] 
+              font-bold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
+          >
+            Let's build
+          </a>
+        </div>
       )}
     </header>
   );

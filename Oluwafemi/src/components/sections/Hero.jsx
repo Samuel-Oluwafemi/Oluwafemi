@@ -43,13 +43,17 @@ export default function Hero() {
           <div className="mt-9 flex md:flex-wrap items-center gap-2 md:gap-6">
             <a
               href="#work"
-              className="premium-button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-3 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950"
+              className="premium-button inline-flex items-center justify-center rounded-full 
+              bg-gradient-to-r from-cyan-300 to-sky-400 px-3 py-3 text-[9px] md:text-[11px] 
+              font-bold uppercase tracking-[0.16em] text-slate-950"
             >
               View my work
             </a>
             <a
               href="#contact"
-              className="secondary-button inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-7 py-3 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-slate-100 hover:border-cyan-300 hover:bg-slate-900/80"
+              className="secondary-button inline-flex items-center justify-center rounded-full 
+              border border-slate-700 bg-slate-950/60 px-7 py-3 text-[9px] md:text-[11px] font-bold uppercase 
+              tracking-[0.16em] text-slate-100 hover:border-cyan-300 hover:bg-slate-900/80"
             >
               Let’s work together
             </a>
@@ -93,7 +97,6 @@ export default function Hero() {
                   alt=""
                 />
               </div>
-              {/*  */}
               <div className="flex items-center justify-between pt-5">
                 <div>
                   <span className="block text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">

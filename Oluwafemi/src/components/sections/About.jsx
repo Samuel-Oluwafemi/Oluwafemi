@@ -26,7 +26,11 @@ export default function About() {
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.7,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             <p className="text-sm leading-8 text-slate-300 sm:text-base">
               I started by learning the web from the ground up — HTML, CSS and

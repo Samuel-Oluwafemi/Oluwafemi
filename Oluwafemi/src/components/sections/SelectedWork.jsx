@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { projects } from "../../data/projects.js";
 
+// Function to open a project by updating the URL hash
 const openProject = (slug) => {
   window.location.hash = `project/${slug}`;
 };
@@ -17,11 +18,15 @@ export default function SelectedWork() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
+          {/* SECTION HEADING */}
           <div>
             <div className="section-label">
               <span>SELECTED WORK</span>
             </div>
-            <h2 className="mt-4 max-w-4xl font-['Space_Grotesk'] text-4xl font-medium leading-tight tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl">
+            <h2
+              className="mt-4 max-w-4xl font-['Space_Grotesk'] text-4xl font-medium leading-tight 
+            tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl"
+            >
               Things I've built, shipped and explored.
             </h2>
           </div>
@@ -31,6 +36,7 @@ export default function SelectedWork() {
           </p>
         </motion.div>
 
+        {/* PROJECT CARDS */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
@@ -54,6 +60,7 @@ export default function SelectedWork() {
                 }
               }}
             >
+              {/* PROJECT IMAGE */}
               <div className="relative min-h-[200px] overflow-hidden bg-slate-900">
                 <span className="absolute left-5 top-4 z-10 text-[10px] font-extrabold uppercase tracking-[0.24em] text-cyan-300">
                   {String(index + 1).padStart(2, "0")}
@@ -64,6 +71,8 @@ export default function SelectedWork() {
                   alt={`${project.title} preview`}
                 />
               </div>
+
+              {/* PROJECT DETAILS */}
               <div className="p-6">
                 <div className="flex items-center justify-between gap-6 md:gap-4">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">
@@ -79,6 +88,8 @@ export default function SelectedWork() {
                 <p className="mt-4 text-sm leading-7 text-slate-400">
                   {project.summary}
                 </p>
+
+                {/* READ CASE STUDY */}
                 <div className="mt-6 flex items-center justify-between gap-4">
                   <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
                     Read case study

@@ -11,7 +11,10 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="font-['Space_Grotesk'] text-4xl font-medium leading-tight tracking-[-0.055em] text-slate-100 sm:text-5xl lg:text-6xl">
+            <h2
+              className="font-['Space_Grotesk'] text-4xl font-medium leading-tight tracking-[-0.055em]
+             text-slate-100 sm:text-5xl lg:text-6xl"
+            >
               Let’s build something useful.
             </h2>
             <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-400 sm:text-base">
@@ -35,7 +38,8 @@ export default function Contact() {
                 Name
               </label>
               <input
-                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 
+                outline-none focus:border-cyan-300"
                 id="name"
                 name="name"
                 type="text"
@@ -49,7 +53,8 @@ export default function Contact() {
                 Email
               </label>
               <input
-                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 
+                outline-none focus:border-cyan-300"
                 id="email"
                 name="email"
                 type="email"
@@ -63,7 +68,8 @@ export default function Contact() {
                 Project type
               </label>
               <select
-                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 
+                outline-none focus:border-cyan-300"
                 id="project-type"
                 name="project-type"
               >
@@ -82,14 +88,16 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-                className="w-full resize-y rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                className="w-full resize-y rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 
+                outline-none focus:border-cyan-300"
                 id="message"
                 name="message"
                 rows="5"
               />
             </div>
             <button
-              className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
+              className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-3 
+              text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
               type="button"
             >
               Start a project

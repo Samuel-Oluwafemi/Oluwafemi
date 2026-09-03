@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+// Process steps data
 const steps = [
   {
     number: "01",
