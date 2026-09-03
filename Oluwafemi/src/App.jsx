@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./components/layout/Navbar.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import SelectedWork from "./components/sections/SelectedWork.jsx";
+import ProjectDetails from "./components/sections/ProjectDetails.jsx";
 import Services from "./components/sections/Services.jsx";
 import Process from "./components/sections/Process.jsx";
 import About from "./components/sections/About.jsx";
@@ -10,6 +11,7 @@ import TechStack from "./components/sections/TechStack.jsx";
 import ClientCTA from "./components/sections/ClientCTA.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import Footer from "./components/layout/Footer.jsx";
+import { projects } from "./data/projects.js";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -25,6 +27,30 @@ const fadeUp = {
 
 export default function App() {
   const [theme, setTheme] = useState("dark");
+  const [projectSlug, setProjectSlug] = useState(() =>
+    window.location.hash.replace("#project/", ""),
+  );
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      setProjectSlug(
+        hash.startsWith("#project/") ? hash.replace("#project/", "") : "",
+      );
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const selectedProject = projects.find(
+    (project) => project.slug === projectSlug,
+  );
+
+  const showHomepage = () => {
+    window.location.hash = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div
@@ -38,14 +64,20 @@ export default function App() {
       <Navbar theme={theme} setTheme={setTheme} />
 
       <motion.main initial="hidden" animate="visible" variants={fadeUp}>
-        <Hero />
-        <About />
-        <SelectedWork />
-        <Services />
-        <Process />
-        <TechStack />
-        <ClientCTA />
-        <Contact />
+        {selectedProject ? (
+          <ProjectDetails project={selectedProject} onBack={showHomepage} />
+        ) : (
+          <>
+            <Hero />
+            <About />
+            <SelectedWork />
+            <Services />
+            <Process />
+            <TechStack />
+            <ClientCTA />
+            <Contact />
+          </>
+        )}
       </motion.main>
 
       <Footer />
