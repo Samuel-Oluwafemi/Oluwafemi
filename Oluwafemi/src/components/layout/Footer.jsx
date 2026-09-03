@@ -13,10 +13,21 @@ export default function Footer() {
             Oluwafemi
           </a>
           <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
-            Built with React, Tailwind and unreasonable curiosity.
+            Built with React, Tailwind<br /> and unreasonable curiosity.
           </p>
         </div>
         <ul className="flex flex-wrap gap-8">
+          <li>
+            <a
+              className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
+              transition hover:text-cyan-300"
+              href="wa.me/2348102409849"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Whatsapp↗
+            </a>
+          </li>
           <li>
             <a
               className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
@@ -30,7 +41,7 @@ export default function Footer() {
             <a
               className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
               transition hover:text-cyan-300"
-              href="#services"
+              href="https://www.linkedin.com/in/samuel-oluwafemi-badru-591a823aa"
             >
               LinkedIn↗
             </a>
@@ -39,7 +50,7 @@ export default function Footer() {
             <a
               className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
               transition hover:text-cyan-300"
-              href="#about"
+              href="https://www.tiktok.com/@samueloluwafemi"
             >
               Tiktok↗
             </a>
@@ -48,7 +59,7 @@ export default function Footer() {
             <a
               className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
               transition hover:text-cyan-300"
-              href="#contact"
+              href="https://www.instagram.com/samuelfemi_dev?igsi=dXo2ZXlrMGo2c3hj"
             >
               Instagram↗
             </a>
