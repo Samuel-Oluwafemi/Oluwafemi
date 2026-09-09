@@ -148,7 +148,10 @@ export default function ProjectDetails({ project, onBack }) {
             {/* FEATURES */}
             <div className="mt-12 border-t border-slate-800 pt-8">
               <span className="section-label">FEATURES</span>
-              <ol className="mt-6 grid list-decimal gap-3 pl-5 marker:font-['JetBrains_Mono'] marker:text-xs marker:font-bold marker:text-cyan-300 sm:grid-cols-2 lg:grid-cols-3">
+              <ol
+                className="mt-6 grid list-decimal gap-3 pl-5 md:gap-5 marker:font-['JetBrains_Mono'] 
+              marker:text-xs marker:font-bold marker:text-cyan-300 sm:grid-cols-2 lg:grid-cols-3"
+              >
                 {project.features.map((feature) => (
                   <li
                     className="border-b border-slate-800 pb-3 pl-2 text-sm font-medium text-slate-300"
