@@ -3,6 +3,7 @@ import veloraImage1 from "../assets/Velora1.png";
 import veloraImage2 from "../assets/Velora2.png";
 import veloraImage3 from "../assets/Velora3.png";
 import veloraImage4 from "../assets/Velora4.png";
+import veloraImage5 from "../assets/Velora5.png";
 import salonflowImage from "../assets/Salonflow.png";
 import salonflowImage1 from "../assets/Salonflow1.png";
 import salonflowImage2 from "../assets/Salonflow2.png";
@@ -34,6 +35,7 @@ export const projects = [
       veloraImage2,
       veloraImage3,
       veloraImage4,
+      veloraImage5,
     ],
     link: "https://velora0.netlify.app/",
     summary:
@@ -43,7 +45,7 @@ export const projects = [
     approach:
       "I shaped the experience around editorial product presentation, clear collection paths and a focused checkout journey. The interface uses spacious layouts, confident typography and deliberate trust signals to keep attention on the products.",
     outcome:
-      "A polished shopping experience that gives the brand a stronger point of view, makes products easier to explore and creates a clearer path from discovery to checkout.",
+      "A polished shopping experience that gives the brand a stronger point of view, makes products easier to explore and creates a clearer path from discovery to checkout with an admin dashboard for managing products, inventory, orders and customer accounts.",
     features: [
       "Homepage with editorial product presentation",
       "Products page and product detail pages with clear collection paths",
@@ -52,6 +54,7 @@ export const projects = [
       "Inventory management for product stock levels",
       "Paystack payment integration for secure transactions",
       "Resend email workflows for order confirmation and account verification",
+      "Protected admin dashboard for managing products, inventory, orders and customer accounts",
       "Responsive layout for optimal viewing on different devices",
     ],
     tech: ["REACT", "TYPESCRIPT", "FIGMA", "FIREBASE", "RESEND", "PAYSTACK"],
