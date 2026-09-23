@@ -21,7 +21,7 @@ export default function Footer() {
             <a
               className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-300 
               transition hover:text-cyan-300"
-              href="wa.me/2348102409849"
+              href="https://wa.me/2348102409849"
               target="_blank"
               rel="noopener noreferrer"
             >
