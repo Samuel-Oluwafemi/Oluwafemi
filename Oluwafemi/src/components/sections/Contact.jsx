@@ -1,6 +1,28 @@
 import { motion } from "framer-motion";
 
+const whatsappNumber = "2348102409849";
+
 export default function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const whatsappMessage = [
+      "Hello Samuel, I would like to discuss a project.",
+      `My name is ${formData.get("name")}.`,
+      "",
+      `My email is ${formData.get("email")}.`,
+      "",
+      `The project type is a ${formData.get("project-type")}.`,
+      "",
+      "Project details:",
+      formData.get("message"),
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section className="py-20 sm:py-24 lg:py-28" id="contact">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -25,6 +47,7 @@ export default function Contact() {
 
           <motion.form
             className="rounded-3xl border border-slate-800 bg-slate-900/50 p-7"
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
@@ -43,6 +66,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
+                required
               />
             </div>
             <div className="mb-4 flex flex-col">
@@ -58,6 +82,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                required
               />
             </div>
             <div className="mb-4 flex flex-col">
@@ -72,6 +97,7 @@ export default function Contact() {
                 outline-none focus:border-cyan-300"
                 id="project-type"
                 name="project-type"
+                required
               >
                 <option>Website redesign</option>
                 <option>Landing page</option>
@@ -95,12 +121,13 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows="5"
+                required
               />
             </div>
             <button
               className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-3 cursor-pointer 
               text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
-              type="button"
+              type="submit"
             >
               Send message →
             </button>
