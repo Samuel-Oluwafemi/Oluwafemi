@@ -36,7 +36,7 @@ export default function ClientCTA() {
             >
               Start a conversation
             </a>
-            <a href="wa.me/2348102409849" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/2348102409849" target="_blank" rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full border border-cyan-400 
               bg-slate-900/60 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-cyan-300 
               transition hover:bg-cyan-400 hover:text-slate-950"
