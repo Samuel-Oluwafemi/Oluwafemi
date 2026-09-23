@@ -21,6 +21,13 @@ import lizImage1 from "../assets/Liz1.png";
 import lizImage2 from "../assets/Liz2.png";
 import lizImage3 from "../assets/Liz3.png";
 import lizImage4 from "../assets/Liz4.png";
+import aurawellnessImage from "../assets/aura.png";
+import aurawellnessImage1 from "../assets/aura1.png";
+import aurawellnessImage2 from "../assets/aura2.png";
+import aurawellnessImage3 from "../assets/aura3.png";
+import aurawellnessImage4 from "../assets/aura4.png";
+import aurawellnessImage5 from "../assets/aura5.png";
+import aurawellnessImage6 from "../assets/aura6.png";
 
 export const projects = [
   {
@@ -77,9 +84,44 @@ export const projects = [
       "A professional online presence that communicates value quickly, builds trust through clarity and makes the enquiry step feel straightforward.",
     features: [
       "Homepage with editorial product presentation",
-      "Services overview with detailed descriptions",
+      "Services showcase with detailed descriptions",
       "About section with professional background and experience",
       "Contact form with email integration for enquiries",
+      "Responsive layout for optimal viewing on different devices",
+      "Email enquiry workflow for prompt responses",
+    ],
+    tech: ["REACT", "TYPESCRIPT", "TAILWINDCSS", "EMAILJS"],
+  },
+  {
+    slug: "aurawellness",
+    label: "CLIENT PROJECT",
+    title: "Aura Wellness",
+    category: "Wellness & Self-Care",
+    image: aurawellnessImage,
+    gallery: [
+      aurawellnessImage,
+      aurawellnessImage1,
+      aurawellnessImage2,
+      aurawellnessImage3,
+      aurawellnessImage4,
+      aurawellnessImage5,
+      aurawellnessImage6
+    ],
+    link: "https://aurawellnesss.netlify.app/",
+    summary:
+      "A wellness and self-care website for a holistic brand to showcase services, build trust and generate enquiries.",
+    challenge:
+      "Aura Wellness needed a website that could communicate the quality of its wellness and self-care services before a visitor ever made contact.",
+    approach:
+      "I paired strong visual presentation with service-led content, clear calls to action and a responsive layout that keeps the brand experience consistent across devices.",
+    outcome:
+      "A more confident digital touchpoint that helps visitors understand the offer, see the brand's character and move naturally toward an enquiry.",
+    features: [
+      "Homepage with editorial product presentation",
+      "Services showcase with detailed descriptions",
+      "Specialist services and packages for different wellness needs",
+      "Credentials and certifications showcase to build trust",
+      "Contact section with consultation booking form and email integration for enquiries",
       "Responsive layout for optimal viewing on different devices",
       "Email enquiry workflow for prompt responses",
     ],
