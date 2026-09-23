@@ -75,8 +75,10 @@ export default function Contact() {
               >
                 <option>Website redesign</option>
                 <option>Landing page</option>
+                <option>E-commerce Website</option>
                 <option>Booking experience</option>
                 <option>Portfolio</option>
+                <option>Saas</option>
                 <option>Other</option>
               </select>
             </div>
@@ -96,11 +98,11 @@ export default function Contact() {
               />
             </div>
             <button
-              className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-3 
+              className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-3 cursor-pointer 
               text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300"
               type="button"
             >
-              Start a project
+              Send message →
             </button>
           </motion.form>
         </div>
