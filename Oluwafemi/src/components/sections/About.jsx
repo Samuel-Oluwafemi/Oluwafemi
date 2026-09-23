@@ -33,16 +33,23 @@ export default function About() {
             }}
           >
             <p className="text-sm leading-8 text-slate-300 sm:text-base">
-              I started by learning the web from the ground up — HTML, CSS and
-              JavaScript — before moving into React and modern frontend
-              development.
+              I started my career as a frontend developer, building websites and
+              web applications for a range of clients. I enjoyed the technical
+              challenge of turning designs into functional code, but I found
+              myself increasingly interested in the bigger picture of how
+              websites work for businesses and their customers.
             </p>
             <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
-              Over time, I became increasingly interested in what happens beyond
-              the code. Why does one website immediately make a business feel
-              trustworthy while another creates friction? Why does one landing
-              page make the next step obvious while another leaves visitors
-              wondering what to do?
+              I wanted to understand what makes a website effective, how to make
+              it easy for visitors to take the next step and how to create a
+              digital experience that reflects the brand's character and values.
+            </p>
+            <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
+              Over time, I've become increasingly interested in what happens
+              beyond the code. Why does one website immediately make a business
+              feel trustworthy while another creates friction? Why does one
+              landing page make the next step obvious while another leaves
+              visitors wondering what to do?
             </p>
             <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
               Today, I combine frontend development with UI/UX thinking and
