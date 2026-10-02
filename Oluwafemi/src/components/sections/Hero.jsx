@@ -44,14 +44,14 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-1">
             <a
               href="#work"
-              className="premium-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-3 md:px-6 py-3 text-sm font-semibold"
+              className="premium-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-2 md:px-6 py-3 text-sm font-semibold"
             >
               Explore my work
               <ArrowDownRight size={17} />
             </a>
             <a
               href="#contact"
-              className="secondary-button inline-flex min-h-12 items-center justify-center rounded-full border px-3 md:px-6 py-3 text-sm font-semibold"
+              className="secondary-button inline-flex min-h-12 items-center justify-center rounded-full border px-2 md:px-6 py-3 text-sm font-semibold"
             >
               Start a conversation
             </a>
