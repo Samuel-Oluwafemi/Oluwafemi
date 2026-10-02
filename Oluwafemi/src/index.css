@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -341,5 +341,506 @@ p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #f7f8f5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.app-shell {
+  --bg: #f7f8f5;
+  --bg-soft: #edf1ed;
+  --bg-elevated: #ffffff;
+  --bg-panel: rgba(255, 255, 255, 0.88);
+  --bg-panel-strong: #ffffff;
+  --line: rgba(32, 38, 34, 0.12);
+  --line-strong: rgba(32, 38, 34, 0.2);
+  --text: #202622;
+  --text-strong: #202622;
+  --muted: #626d66;
+  --soft: #87918a;
+  --cyan: #285b49;
+  --cyan-strong: #1c4236;
+  --violet: #b8803e;
+  --accent-text: #285b49;
+  --card-shadow: rgba(24, 39, 31, 0.07);
+  --hero-glow: rgba(209, 226, 215, 0.65);
+  --accent: #285b49;
+  --accent-hover: #1c4236;
+  --accent-foreground: #ffffff;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.app-shell.light {
+  color-scheme: light;
+  background:
+    radial-gradient(ellipse at 72% 7%, rgba(221, 235, 224, 0.65), transparent 30rem),
+    var(--bg);
+}
+
+.app-shell.dark {
+  --bg: #111815;
+  --bg-soft: #1a231e;
+  --bg-elevated: #202b25;
+  --bg-panel: rgba(26, 35, 30, 0.88);
+  --bg-panel-strong: #202b25;
+  --line: rgba(222, 233, 224, 0.13);
+  --line-strong: rgba(222, 233, 224, 0.22);
+  --text: #eef2ed;
+  --text-strong: #f7f8f5;
+  --muted: #c0c9c1;
+  --soft: #98a49a;
+  --cyan: #a7cdb4;
+  --cyan-strong: #c3dec9;
+  --violet: #d0aa77;
+  --accent-text: #c3dec9;
+  --card-shadow: rgba(0, 0, 0, 0.18);
+  --hero-glow: rgba(42, 76, 57, 0.34);
+  --accent: #427256;
+  --accent-hover: #568968;
+  --accent-foreground: #ffffff;
+  color-scheme: dark;
+  background:
+    radial-gradient(ellipse at 72% 7%, rgba(40, 70, 53, 0.28), transparent 30rem),
+    var(--bg);
+}
+
+.app-shell .text-slate-100,
+.app-shell .text-slate-200 {
+  color: var(--text-strong) !important;
+}
+
+.app-shell .text-slate-300,
+.app-shell .text-slate-400 {
+  color: var(--muted) !important;
+}
+
+.app-shell .text-slate-500,
+.app-shell .text-slate-600,
+.app-shell .text-slate-700 {
+  color: var(--soft) !important;
+}
+
+.app-shell .text-cyan-300,
+.app-shell .text-cyan-400 {
+  color: var(--cyan) !important;
+}
+
+.app-shell.light .bg-slate-950,
+.app-shell.light .bg-slate-950\/95,
+.app-shell.light .bg-slate-900,
+.app-shell.light .bg-slate-900\/50,
+.app-shell.light .bg-slate-900\/60,
+.app-shell.light .bg-slate-900\/70,
+.app-shell.light .bg-slate-800 {
+  background-color: var(--bg-soft) !important;
+}
+
+.app-shell.light .border-slate-800,
+.app-shell.light .border-slate-700 {
+  border-color: var(--line) !important;
+}
+
+.app-shell.light [class*="bg-gradient-to-"] {
+  background-image: none !important;
+  background-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.app-shell.light .glass-panel {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(32, 38, 34, 0.1);
+  box-shadow: 0 8px 30px rgba(22, 35, 26, 0.08);
+}
+
+.app-shell.dark .glass-panel {
+  background: rgba(26, 35, 30, 0.86);
+  border-color: var(--line);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.premium-card,
+.app-shell.light .premium-card {
+  border-color: var(--line);
+  background: var(--bg-elevated);
+  box-shadow: 0 12px 32px var(--card-shadow);
+}
+
+.premium-card::before {
+  display: none;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: 0 16px 38px var(--card-shadow);
+}
+
+.premium-button {
+  background: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+  box-shadow: none;
+}
+
+.premium-button:hover,
+.app-shell.light .bg-cyan-400:hover {
+  background: var(--accent-hover) !important;
+}
+
+.app-shell.light .bg-cyan-400 {
+  background: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.secondary-button {
+  background: transparent !important;
+  border-color: var(--line-strong) !important;
+  color: var(--text) !important;
+}
+
+.secondary-button::before,
+.premium-button::before {
+  display: none;
+}
+
+.section-label {
+  color: var(--cyan);
+  letter-spacing: 0.14em;
+}
+
+.section-label::before {
+  width: 7px;
+  height: 7px;
+  background: var(--violet);
+  box-shadow: none;
+}
+
+.app-shell.light #cta .container > div {
+  border: 0;
+  background: var(--bg-soft);
+}
+
+.app-shell.light input,
+.app-shell.light select,
+.app-shell.light textarea {
+  border-color: var(--line);
+  background-color: #ffffff;
+  color: var(--text);
+}
+
+.app-shell.light input::placeholder,
+.app-shell.light textarea::placeholder {
+  color: var(--soft);
+}
+
+.app-shell .project-image {
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.app-shell .premium-card:hover .project-image {
+  transform: scale(1.025);
+  filter: none;
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.hero-period {
+  color: var(--cyan);
+}
+
+.hero-eyebrow,
+.hero-status-dot {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  gap: 10px;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-status-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--violet);
+}
+
+.hero-position {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  justify-self: end;
+  padding-bottom: 42px;
+}
+
+.hero-portrait-field {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.92;
+  max-height: 620px;
+  border-radius: 260px 260px 20px 20px;
+  background: #e3ebe2;
+}
+
+.hero-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.hero-image-note {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 999px;
+  background: rgba(247, 248, 245, 0.82);
+  color: #36443b;
+  font-size: 10px;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+}
+
+.hero-note-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #b8803e;
+}
+
+.hero-featured-project {
+  position: absolute;
+  bottom: 0;
+  left: -48px;
+  display: flex;
+  width: min(340px, 82%);
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid rgba(32, 38, 34, 0.08);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(24, 39, 31, 0.12);
+  color: var(--text);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.hero-featured-project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(24, 39, 31, 0.16);
+}
+
+.hero-featured-project > img {
+  width: 64px;
+  height: 58px;
+  flex: 0 0 64px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hero-featured-project > svg {
+  margin-left: auto;
+  color: var(--cyan);
+}
+
+.hero-feature-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.hero-feature-label {
+  color: var(--soft);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.hero-feature-copy strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.app-shell.light .glass-panel {
+  border-radius: 999px;
+}
+
+.glass-panel a {
+  letter-spacing: 0.02em;
+}
+
+.app-shell.light header .glass-panel a:hover {
+  color: var(--cyan) !important;
+}
+
+.app-shell.dark .hero-featured-project {
+  border-color: var(--line);
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+}
+
+.app-shell.dark .hero-image-note {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(26, 35, 30, 0.82);
+  color: #eef2ed;
+}
+
+.app-shell.dark .hero-portrait-field {
+  background: #26342b;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 64px;
+  }
+
+  .hero-position {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 76px;
+  }
+
+  .hero-position {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-art {
+    justify-self: center;
+    width: min(100%, 420px);
+  }
+
+  .hero-featured-project {
+    left: 12px;
+    width: calc(100% - 24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.app-shell.dark {
+  --bg: #020817;
+  --bg-soft: #0f172a;
+  --bg-elevated: #111827;
+  --bg-panel: rgba(15, 23, 42, 0.88);
+  --bg-panel-strong: #0f172a;
+  --line: rgba(148, 163, 184, 0.18);
+  --line-strong: rgba(148, 163, 184, 0.28);
+  --text: #e2e8f0;
+  --text-strong: #f8fafc;
+  --muted: #cbd5e1;
+  --soft: #94a3b8;
+  --cyan: #7ec5d6;
+  --cyan-strong: #4ea8c7;
+  --violet: #7e8fe5;
+  --accent-text: #dfeef7;
+  --card-shadow: rgba(2, 6, 23, 0.35);
+  --hero-glow: rgba(34, 211, 238, 0.12);
+  --accent: #4ea8c7;
+  --accent-hover: #3d91b0;
+  --accent-foreground: #ffffff;
+  background:
+    radial-gradient(ellipse at 72% 7%, rgba(34, 91, 130, 0.22), transparent 30rem),
+    var(--bg);
+}
+
+.app-shell.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.86);
+}
+
+.app-shell.dark .hero-image-note {
+  background: rgba(15, 23, 42, 0.86);
+  color: #e2e8f0;
+}
+
+.app-shell.dark .hero-portrait-field {
+  background: #18263a;
+}
+
+.app-shell main > section:not(.hero-section) {
+  padding-block: clamp(5rem, 7vw, 7rem);
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 68px;
+  }
+
+  .hero-position {
+    font-size: 24px;
+  }
+
+  .hero-art {
+    max-width: 460px;
+  }
+
+  .hero-portrait-field {
+    max-height: 520px;
+  }
+
+  .hero-featured-project {
+    left: -32px;
+  }
+
+  .hero-section > .container {
+    column-gap: 5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }

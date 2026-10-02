@@ -61,17 +61,6 @@ export default function App() {
     <div
       className={`app-shell ${theme} min-h-screen antialiased selection:bg-cyan-400/40`}
     >
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div
-          className="floating-orb absolute left-1/2 top-[-8rem] h-[30rem] w-[30rem] -translate-x-1/2 
-        rounded-full bg-cyan-500/10 blur-3xl"
-        />
-        <div
-          className="floating-orb absolute bottom-[-12rem] right-[-4rem] h-[26rem] w-[26rem] 
-        rounded-full bg-violet-500/10 blur-3xl"
-        />
-      </div>
-
       <Navbar theme={theme} setTheme={setTheme} />
 
       <motion.main initial="hidden" animate="visible" variants={fadeUp}>
