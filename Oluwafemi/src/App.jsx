@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "./components/layout/Navbar.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import SelectedWork from "./components/sections/SelectedWork.jsx";
+import ProjectMarquee from "./components/sections/ProjectMarquee.jsx";
 import ProjectDetails from "./components/sections/ProjectDetails.jsx";
 import Services from "./components/sections/Services.jsx";
 import Process from "./components/sections/Process.jsx";
@@ -70,6 +71,7 @@ export default function App() {
           <>
             <Hero />
             <About />
+            <ProjectMarquee />
             <SelectedWork />
             <Services />
             <Process />

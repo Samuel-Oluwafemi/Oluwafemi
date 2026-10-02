@@ -817,6 +817,180 @@ h4 {
   padding-block: clamp(5rem, 7vw, 7rem);
 }
 
+.app-shell main > .project-marquee-section {
+  padding-block: 1.5rem 2rem;
+}
+
+.project-marquee-section {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+}
+
+.project-marquee-kicker,
+.project-marquee-hint {
+  margin: 0;
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-marquee-viewport {
+  overflow: hidden;
+}
+
+.project-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: project-marquee-scroll 42s linear infinite;
+}
+
+.project-marquee-section:hover .project-marquee-track,
+.project-marquee-section:focus-within .project-marquee-track {
+  animation-play-state: paused;
+}
+
+.project-marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.project-marquee-item {
+  position: relative;
+  display: flex;
+  width: clamp(300px, 35vw, 460px);
+  height: clamp(190px, 22vw, 260px);
+  flex: 0 0 auto;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.project-marquee-item::after {
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(3, 8, 18, 0.02) 25%, rgba(3, 8, 18, 0.84) 100%);
+  content: "";
+  inset: 0;
+  transition: background-color 220ms ease;
+}
+
+.project-marquee-item:hover::after,
+.project-marquee-item:focus-visible::after {
+  background-color: rgba(3, 8, 18, 0.16);
+}
+
+.project-marquee-item:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.project-marquee-item .project-marquee-image {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-marquee-item:hover .project-marquee-image,
+.project-marquee-item:focus-visible .project-marquee-image {
+  transform: scale(1.04);
+}
+
+.project-marquee-index {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.project-marquee-copy {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  padding: 20px 24px;
+}
+
+.project-marquee-category {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-marquee-title {
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-marquee-item > svg {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  flex: 0 0 auto;
+  color: #ffffff;
+}
+
+@media (max-width: 639px) {
+  .project-marquee-item {
+    width: min(82vw, 360px);
+    height: 205px;
+  }
+
+  .project-marquee-copy {
+    padding: 18px;
+  }
+
+  .project-marquee-title {
+    font-size: 21px;
+  }
+}
+
+@keyframes project-marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-marquee-viewport {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .project-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .project-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 68px;
