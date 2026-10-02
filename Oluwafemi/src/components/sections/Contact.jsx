@@ -102,7 +102,6 @@ export default function Contact() {
                 <option>Website redesign</option>
                 <option>Landing page</option>
                 <option>E-commerce Website</option>
-                <option>Booking experience</option>
                 <option>Portfolio</option>
                 <option>Saas</option>
                 <option>Other</option>
