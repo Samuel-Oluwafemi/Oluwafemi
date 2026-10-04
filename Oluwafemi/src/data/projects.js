@@ -28,6 +28,10 @@ import aurawellnessImage3 from "../assets/aura3.png";
 import aurawellnessImage4 from "../assets/aura4.png";
 import aurawellnessImage5 from "../assets/aura5.png";
 import aurawellnessImage6 from "../assets/aura6.png";
+import korae from "../assets/korae.png";
+import korae1 from "../assets/korae1.png";
+import korae2 from "../assets/korae2.png";
+import korae3 from "../assets/korae3.png";
 
 export const projects = [
   {
@@ -49,6 +53,40 @@ export const projects = [
       "A conversion-focused e-commerce website for a minimalist fashion brand to showcase products, build trust and generate sales.",
     challenge:
       "Velora needed a digital storefront that could make a restrained fashion collection feel desirable while giving shoppers enough confidence to complete a purchase.",
+    approach:
+      "I shaped the experience around editorial product presentation, clear collection paths and a focused checkout journey. The interface uses spacious layouts, confident typography and deliberate trust signals to keep attention on the products.",
+    outcome:
+      "A polished shopping experience that gives the brand a stronger point of view, makes products easier to explore and creates a clearer path from discovery to checkout with an admin dashboard for managing products, inventory, orders and customer accounts.",
+    features: [
+      "Homepage with editorial product presentation",
+      "Products page and product detail pages with clear collection paths",
+      "Customer-side authentication for account creation and order tracking",
+      "Admin-side authentication for product management and order tracking",
+      "Inventory management for product stock levels",
+      "Paystack payment integration for secure transactions",
+      "Resend email workflows for order confirmation and account verification",
+      "Protected admin dashboard for managing products, inventory, orders and customer accounts",
+      "Responsive layout for optimal viewing on different devices",
+    ],
+    tech: ["REACT", "TYPESCRIPT", "FIGMA", "FIREBASE", "RESEND", "PAYSTACK"],
+  },
+  {
+    slug: "korae",
+    label: "CLIENT PROJECT",
+    title: "Korae",
+    category: "E-commerce Experience",
+    image: korae,
+    gallery: [
+      korae,
+      korae1,
+      korae2,
+      korae3,
+    ],
+    link: "https://korae.netlify.app/",
+    summary:
+      "A conversion-focused e-commerce website for a minimalist fashion brand to showcase products, build trust and generate sales.",
+    challenge:
+      "Korae needed a digital storefront that could make a restrained fashion collection feel desirable while giving shoppers enough confidence to complete a purchase.",
     approach:
       "I shaped the experience around editorial product presentation, clear collection paths and a focused checkout journey. The interface uses spacious layouts, confident typography and deliberate trust signals to keep attention on the products.",
     outcome:
