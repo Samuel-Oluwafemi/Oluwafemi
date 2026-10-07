@@ -74,7 +74,7 @@ export const projects = [
   },
   {
     slug: "korae",
-    label: "CLIENT PROJECT",
+    label: "PERSONAL PROJECT",
     title: "Korae",
     category: "E-commerce Experience",
     image: korae,
