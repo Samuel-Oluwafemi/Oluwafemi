@@ -32,6 +32,8 @@ import korae from "../assets/korae.png";
 import korae1 from "../assets/korae1.png";
 import korae2 from "../assets/korae2.png";
 import korae3 from "../assets/korae3.png";
+import korae4 from "../assets/korae4.png";
+import korae5 from "../assets/korae5.png";
 
 export const projects = [
   {
@@ -78,6 +80,8 @@ export const projects = [
     image: korae,
     gallery: [
       korae,
+      korae4,
+      korae5,
       korae1,
       korae2,
       korae3,
