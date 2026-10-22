@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Navbar from "./components/layout/Navbar.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import SelectedWork from "./components/sections/SelectedWork.jsx";
@@ -27,8 +27,76 @@ const fadeUp = {
   },
 };
 
+const introSessionKey = "oluwafemi-intro-seen";
+
+function shouldShowIntro() {
+  try {
+    return window.sessionStorage.getItem(introSessionKey) !== "true";
+  } catch {
+    return false;
+  }
+}
+
+function HomepageIntro({ onComplete }) {
+  const [isLeaving, setIsLeaving] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    try {
+      window.sessionStorage.setItem(introSessionKey, "true");
+    } catch {
+      // The intro still runs when session storage is unavailable.
+    }
+  }, []);
+
+  return (
+    <motion.div
+      className="homepage-intro"
+      initial={{ y: "0%" }}
+      animate={{ y: isLeaving ? "-100%" : "0%" }}
+      transition={{
+        duration: prefersReducedMotion ? 0.01 : 0.72,
+        ease: [0.76, 0, 0.24, 1],
+      }}
+      onAnimationComplete={() => {
+        if (isLeaving) onComplete();
+      }}
+      role="status"
+      aria-label="Welcome to Oluwafemi's portfolio"
+    >
+      <div className="homepage-intro-content">
+        <p className="homepage-intro-kicker">
+          INDEPENDENT DESIGN & DEVELOPMENT
+        </p>
+
+        <p className="homepage-intro-brand ">
+          Oluwafemi<span>.</span>
+        </p>
+        <div className="homepage-intro-progress" aria-hidden="true">
+          <motion.span
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{
+              duration: prefersReducedMotion ? 0.01 : 1.35,
+              ease: [0.65, 0, 0.35, 1],
+              delay: prefersReducedMotion ? 0 : 0.45,
+            }}
+            onAnimationComplete={() => {
+              window.setTimeout(
+                () => setIsLeaving(true),
+                prefersReducedMotion ? 0 : 220,
+              );
+            }}
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function App() {
   const [theme, setTheme] = useState("dark");
+  const [isIntroVisible, setIsIntroVisible] = useState(shouldShowIntro);
   const [projectSlug, setProjectSlug] = useState(() =>
     window.location.hash.replace("#project/", ""),
   );
@@ -62,27 +130,33 @@ export default function App() {
     <div
       className={`app-shell ${theme} min-h-screen antialiased selection:bg-cyan-400/40`}
     >
-      <Navbar theme={theme} setTheme={setTheme} />
+      {isIntroVisible && (
+        <HomepageIntro onComplete={() => setIsIntroVisible(false)} />
+      )}
 
-      <motion.main initial="hidden" animate="visible" variants={fadeUp}>
-        {selectedProject ? (
-          <ProjectDetails project={selectedProject} onBack={showHomepage} />
-        ) : (
-          <>
-            <Hero />
-            <About />
-            <ProjectMarquee />
-            <SelectedWork />
-            <Services />
-            <Process />
-            <TechStack />
-            <ClientCTA />
-            <Contact />
-          </>
-        )}
-      </motion.main>
+      <div inert={isIntroVisible}>
+        <Navbar theme={theme} setTheme={setTheme} />
 
-      <Footer />
+        <motion.main initial="hidden" animate="visible" variants={fadeUp}>
+          {selectedProject ? (
+            <ProjectDetails project={selectedProject} onBack={showHomepage} />
+          ) : (
+            <>
+              <Hero />
+              <About />
+              <ProjectMarquee />
+              <SelectedWork />
+              <Services />
+              <Process />
+              <TechStack />
+              <ClientCTA />
+              <Contact />
+            </>
+          )}
+        </motion.main>
+
+        <Footer />
+      </div>
     </div>
   );
 }

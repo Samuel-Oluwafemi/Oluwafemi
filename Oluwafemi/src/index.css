@@ -817,6 +817,60 @@ h4 {
   padding-block: clamp(5rem, 7vw, 7rem);
 }
 
+.homepage-intro {
+  position: fixed;
+  z-index: 100;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text-strong);
+  inset: 0;
+}
+
+.homepage-intro-content {
+  width: min(460px, calc(100% - 48px));
+}
+
+.homepage-intro-kicker {
+  margin: 0 0 18px;
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.homepage-intro-brand {
+  margin: 0;
+  color: var(--text-strong);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(52px, 8vw, 82px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-align: center;
+}
+
+.homepage-intro-brand span {
+  color: var(--cyan);
+}
+
+.homepage-intro-progress {
+  height: 2px;
+  margin-top: 34px;
+  overflow: hidden;
+  background: var(--line-strong);
+}
+
+.homepage-intro-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--cyan);
+}
+
 .app-shell main > .project-marquee-section {
   padding-block: 1.5rem 2rem;
 }
