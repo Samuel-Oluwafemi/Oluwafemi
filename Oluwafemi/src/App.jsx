@@ -8,6 +8,7 @@ import ProjectDetails from "./components/sections/ProjectDetails.jsx";
 import Services from "./components/sections/Services.jsx";
 import Process from "./components/sections/Process.jsx";
 import About from "./components/sections/About.jsx";
+import AboutPage from "./components/sections/AboutPage.jsx";
 import TechStack from "./components/sections/TechStack.jsx";
 import ClientCTA from "./components/sections/ClientCTA.jsx";
 import Contact from "./components/sections/Contact.jsx";
@@ -97,6 +98,9 @@ function HomepageIntro({ onComplete }) {
 export default function App() {
   const [theme, setTheme] = useState("dark");
   const [isIntroVisible, setIsIntroVisible] = useState(shouldShowIntro);
+  const [currentPath, setCurrentPath] = useState(() =>
+    window.location.pathname.replace(/\/+$/, "") || "/",
+  );
   const [projectSlug, setProjectSlug] = useState(() =>
     window.location.hash.replace("#project/", ""),
   );
@@ -112,7 +116,16 @@ export default function App() {
 
     // Add event listener for hash changes and clean up on unmount
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname.replace(/\/+$/, "") || "/");
+      handleHashChange();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, []);
 
   // Find the selected project based on the current slug
@@ -140,6 +153,8 @@ export default function App() {
         <motion.main initial="hidden" animate="visible" variants={fadeUp}>
           {selectedProject ? (
             <ProjectDetails project={selectedProject} onBack={showHomepage} />
+          ) : currentPath === "/about" ? (
+            <AboutPage />
           ) : (
             <>
               <Hero />

@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <a
             className="text-2xl font-bold tracking-[-.04em] text-slate-100"
-            href="#home"
+            href="/#home"
           >
             Oluwafemi
           </a>

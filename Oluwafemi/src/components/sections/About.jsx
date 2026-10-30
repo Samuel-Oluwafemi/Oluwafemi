@@ -1,10 +1,11 @@
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section className="py-20 sm:py-24 lg:py-28" id="about">
       <div className="container mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(260px,0.9fr)_minmax(520px,1fr)]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(260px,0.9fr)_minmax(420px,1fr)] lg:items-end lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +23,7 @@ export default function About() {
             </h2>
           </motion.div>
           <motion.div
-            className="premium-card rounded-[28px] p-7 sm:p-8 text-slate-300"
+            className="max-w-2xl"
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
@@ -32,31 +33,18 @@ export default function About() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <p className="text-sm leading-8 text-slate-300 sm:text-base">
-              I started my career as a frontend developer, building websites and
-              web applications for a range of clients. I enjoyed the technical
-              challenge of turning designs into functional code, but I found
-              myself increasingly interested in the bigger picture of how
-              websites work for businesses and their customers.
+            <p className="text-base leading-8 text-slate-300 sm:text-lg">
+              I’m Samuel Oluwafemi, a frontend developer who grew curious about
+              the thinking behind an effective digital experience: what earns
+              trust, removes friction, and helps someone take the next step.
             </p>
-            <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
-              I wanted to understand what makes a website effective, how to make
-              it easy for visitors to take the next step and how to create a
-              digital experience that reflects the brand's character and values.
-            </p>
-            <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
-              Over time, I've become increasingly interested in what happens
-              beyond the code. Why does one website immediately make a business
-              feel trustworthy while another creates friction? Why does one
-              landing page make the next step obvious while another leaves
-              visitors wondering what to do?
-            </p>
-            <p className="mt-6 text-sm leading-8 text-slate-300 sm:text-base">
-              Today, I combine frontend development with UI/UX thinking and
-              conversion-focused website strategy. I like taking an idea, making
-              the experience clear, building it and getting it into people's
-              hands with the goal of solving problems for businesses.
-            </p>
+            <a
+              href="/about"
+              className="secondary-button mt-7 inline-flex min-h-11 items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold"
+            >
+              Read my story
+              <ArrowUpRight size={16} />
+            </a>
           </motion.div>
         </div>
       </div>

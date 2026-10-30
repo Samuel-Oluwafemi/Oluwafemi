@@ -3,6 +3,11 @@ import { Menu, MoonStar, SunMedium, X } from "lucide-react";
 
 const navItems = ["Work", "Services", "About", "Contact"];
 
+const navHref = (item) => {
+  if (item === "About") return "/about";
+  return `/#${item.toLowerCase()}`;
+};
+
 // Navbar component with theme toggle and responsive navigation
 export default function Navbar({ theme, setTheme }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +27,7 @@ export default function Navbar({ theme, setTheme }) {
         {/* NAVIGATION LINKS */}
         <div className="flex w-full items-center gap-2 sm:gap-3">
           <a
-            href="#home"
+            href="/#home"
             aria-label="Oluwafemi home"
             onClick={() => setIsOpen(false)}
             className="shrink-0 text-[18px] font-bold tracking-[-.04em] text-slate-100 sm:text-[20px] md:text-[23px]"
@@ -36,7 +41,7 @@ export default function Navbar({ theme, setTheme }) {
               {navItems.map((item) => (
                 <li key={item}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={navHref(item)}
                     className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition 
                     hover:text-cyan-300 md:text-[11px]"
                   >
@@ -69,7 +74,7 @@ export default function Navbar({ theme, setTheme }) {
 
             {/* CONTACT BUTTON */}
             <a
-              href="#contact"
+              href="/#contact"
               className="hidden items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] 
               font-bold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-cyan-300 md:inline-flex md:px-6 md:py-3 md:text-[11px]"
             >
@@ -100,7 +105,7 @@ export default function Navbar({ theme, setTheme }) {
             {navItems.map((item) => (
               <li key={item}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={navHref(item)}
                   onClick={() => setIsOpen(false)}
                   className="block rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] 
                   text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
@@ -112,7 +117,7 @@ export default function Navbar({ theme, setTheme }) {
           </ul>
 
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setIsOpen(false)}
             className="flex items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-[10px] 
               font-bold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
